@@ -14,7 +14,7 @@ t=t-1;
 document.getElementById("hints").innerHTML=t;
 if (t==0)
 {
-document.location.href="../patent/Login.jsp";
+document.location.href="../community4050/admin/Login.jsp";
 }
 }
 </script>
@@ -22,6 +22,6 @@ document.location.href="../patent/Login.jsp";
 <body onload="window.setInterval(shua,1000);">
 <h1>Sorry,登录失败！！！！</h1>
 <font id="hints">5</font>秒后自动跳转。。。
-<input type="button" onclick="location.href='../patent/Login.jsp'" value="重新登陆 "/>
+<input type="button" onclick="location.href='../community4050/admin/Login.jsp'" value="重新登陆 "/>
 </body>
 </html>

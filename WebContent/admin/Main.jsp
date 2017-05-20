@@ -2,7 +2,7 @@
 <html >
 <head >
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>江宁高新园创新服务中心平台</title>
+    <title>4050社区管理</title>
     <script src="js/jquery-1.8.3.js"></script>
     <script src="easyui/jquery.easyui.min.js"></script>
     <link href="easyui/themes/default/easyui.css" rel="stylesheet" />
@@ -40,7 +40,7 @@
         <div data-options="region:'north',border:false" id="north">
             <span class="topright">
                 欢迎<span class="lgUser">您,${username}&nbsp; </span><a href="#" id="editpass">修改密码</a> <a href="./logout.do" id="loginOut">安全退出</a></span>
-            <span class="topleft">南京江宁高新园创业服务中心</span>
+            <span class="topleft">4050社区</span>
         </div>
         <div id="west" data-options="region:'west',split:true,title:'导航菜单'">
             <div class="easyui-accordion1" fit="true" border="false">
@@ -54,10 +54,10 @@
         </div>
         <div data-options="region:'center'" id="mainPanle">
             <div id="tabs" class="easyui-tabs" fit="true" border="false">
-                <div title="专利中心" style="padding: 20px; overflow: hidden;" id="home">
+                <div title="社区中心" style="padding: 20px; overflow: hidden;" id="home">
                   
                         <div style="margin:10px 0;"></div>
-                    <div style="font-size:14px; color:#444444; line-height:32px;" class="auto-style2"><span class="auto-style1">欢迎大家，浏览江宁高新园创新服务中心平台！</span><br /> 
+                    <div style="font-size:14px; color:#444444; line-height:32px;" class="auto-style2"><span class="auto-style1">欢迎大家，浏览4050社区！</span><br /> 
                      
                     
                     </div>

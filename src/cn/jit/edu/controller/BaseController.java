@@ -105,6 +105,7 @@ public class BaseController{
 		  entityDao.save(article);		  
 		  return "../admin/newssuccess";		  
 	  }
+	  
 	  @RequestMapping("/show.do")
 	  public String show(HttpServletRequest req,ModelMap model) {					  
 		  String username=req.getParameter("sign");
