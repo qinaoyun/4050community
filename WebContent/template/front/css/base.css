@@ -1,0 +1,751 @@
+@charset "utf-8";
+
+
+.header #headerShowLoginWindow, .header #headerMemberCenter, .header #headerShowRegisterWindow, .header #headerLogout {
+	display: none;
+}
+
+.fl #headerLoginMemberUsername {
+	color: #ff662b;
+}
+
+.blank {
+	width: 100%;
+	height: 10px;
+	clear: both;
+	overflow: hidden;
+}
+
+/* ---------- Pager ---------- */
+
+.pager {
+	float: right;
+	clear: both;
+}
+
+.pager li {
+	line-height: 18px;
+	display: block;
+	float: left;
+	padding: 0px 5px;
+	margin: 0px 3px;
+	font-size: 12px;
+	border: 1px solid #cccccc;
+}
+
+.pager li:hover {
+	color: #ff9900;
+	border: 1px solid #ff9900;
+}
+
+.pager li:hover a {
+	color: #ff9900;
+}
+
+.pager li a {
+	color: #464646;
+}
+
+.pager li span {
+	color: #cfcfcf;
+}
+
+.pager li.currentPage {
+	border: 1px solid #ff9900;
+	background-color: #ff9900;
+}
+
+.pager li.currentPage span {
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.pager li.pageInfo {
+	margin-right: 5px;
+	color: #464646;
+	border: none;
+	background: none;
+}
+/* ---------- FriendLink ---------- */
+
+.friendLink {
+	clear: both;
+}
+
+.friendLink .pictureFriendLink {
+	clear: both;
+}
+
+.friendLink .pictureFriendLink .left {
+	/*width: 10px;
+	height: 40px;
+	float: left;
+	background: url(../images/friend_link_bg.gif) 0px 0px no-repeat;*/
+}
+
+.friendLink .pictureFriendLink .middle {
+	width: 980px;
+	height: 32px;
+	line-height: 32px;
+	float: left;
+	padding: 4px 0px;
+	overflow: hidden;
+	text-align: center;
+	/*background: url(../images/friend_link_x_bg.gif) 0px 0px repeat-x;*/
+}
+
+.friendLink .pictureFriendLink .middle li {
+	display: inline;
+	float: center;
+	margin: 0px 14px;
+}
+
+.friendLink .pictureFriendLink .middle li img {
+	width: 88px;
+	height: 31px;
+}
+
+.friendLink .pictureFriendLink .right {
+	/*width: 10px;
+	height: 40px;
+	float: right;
+	background: url(../images/friend_link_bg.gif) -30px 0px no-repeat;*/
+}
+
+.friendLink .textFriendLink {
+	clear: both;
+}
+
+.friendLink .textFriendLink .left {
+	width: 0px;
+	height: 40px;
+	float: left;
+	background: url(../images/friend_link_bg.gif) 0px -60px no-repeat;
+}
+
+.friendLink .textFriendLink .middle {
+	width: 980px;
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+	background: url(../images/friend_link_x_bg.gif) 0px -60px repeat-x;
+}
+
+.friendLink .textFriendLink .middle li {
+	display: inline;
+	float: center;
+	margin: 0px 33px;
+}
+
+.friendLink .textFriendLink .middle li a {
+	color: #9b9b9b;
+}
+
+.friendLink .textFriendLink .middle li a:hover {
+	color: #ea6210;
+}
+
+.friendLink .textFriendLink .right {
+	width: 10px;
+	height: 40px;
+	float: right;
+	/*background: url(../images/friend_link_bg.gif) -30px -60px no-repeat;*/
+}
+
+
+/* ---------- Register ---------- */
+
+.registerWindow .dialogContent {
+	margin: 0px;
+}
+
+.registerWindow table {
+	width: 80%;
+}
+
+.registerWindow th {
+	width: 130px;
+	line-height: 35px;
+	padding-right: 10px;
+	text-align: right;
+	font-weight: normal;
+}
+
+.registerWindow td {
+	line-height: 35px;
+	text-align: left;
+}
+
+.registerWindow .registerWindowCaptcha {
+	width: 80px;
+	margin-right: 5px;
+	text-transform: uppercase;
+}
+
+.registerWindow .registerWindowCaptchaImage {
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+/* ---------- Login ---------- */
+
+.loginWindow .dialogContent {
+	text-align: left;
+	padding: 10px;
+	margin: 0px;
+}
+
+.loginWindow table {
+	width: 80%;
+}
+
+.loginWindow th {
+	width: 100px;
+	line-height: 35px;
+	padding-right: 10px;
+	text-align: right;
+	font-weight: normal;
+}
+
+.loginWindow td {
+	line-height: 35px;
+	text-align: left;
+}
+
+.loginWindow .loginWindowCaptcha {
+	width: 80px;
+	margin-right: 5px;
+	text-transform: uppercase;
+}
+
+.loginWindow .loginWindowCaptchaImage {
+	vertical-align: middle;
+	cursor: pointer;
+}
+.login .body {
+	width: 1000px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+.login .loginDetail {
+	width: 500px;
+	margin: 0px auto;
+}
+
+.login .loginDetail .top {
+	width: 455px;
+	height: 41px;
+	line-height: 38px;
+	clear: both;
+	padding-top: 4px;
+	padding-left: 45px;
+	text-align: left;
+	font-size: 14px;
+	font-weight: bold;
+	color: #515151;
+	overflow: hidden;
+	background: url(../images/login_bg.gif) no-repeat 0px 0px;
+}
+
+.login .loginDetail .middle {
+	width: 500px;
+	clear: both;
+	padding-top: 10px;
+	text-align: center;
+	background: url(../images/login_y_bg.gif) repeat-y 0px 0px;
+}
+
+.login .loginDetail .bottom {
+	width: 500px;
+	height: 60px;
+	clear: both;
+	overflow: hidden;
+	background: url(../images/login_bg.gif) no-repeat 0px -60px;
+}
+
+.login .loginDetail table {
+	width: 100%;
+}
+
+.login .loginDetail th {
+	width: 160px;
+	line-height: 35px;
+	padding-right: 10px;
+	text-align: right;
+	font-weight: normal;
+}
+
+.login .loginDetail td {
+	line-height: 35px;
+	text-align: left;
+}
+
+.login .loginDetail .captcha {
+	width: 95px;
+	margin-right: 1px;
+	text-transform: uppercase;
+}
+
+.login .loginDetail .captchaImage {
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+/* ---------- Form ---------- */
+
+input.formText {
+	width: 180px;
+	padding: 5px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+}
+
+input.formText:hover {
+	border: 1px solid #ff9b1f;
+	background-color: #fefbf7;
+}
+
+input.formText:focus {
+	background-color: #fff8ef;
+}
+
+textarea.formTextarea {
+	width: 350px;
+	height: 120px;
+	padding: 5px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+}
+
+textarea.formTextarea:hover {
+	border: 1px solid #ff9b1f;
+	background-color: #fefbf7;
+}
+
+textarea.formTextarea:focus {
+	background-color: #fff8ef;
+}
+
+.formButton {
+	width: 70px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+	color: #555555;
+	font-size: 12px;
+	outline: none;
+	border: none;
+	background: url(../images/base_button.gif) 0px 0px no-repeat;
+}
+
+.formButton:hover {
+	color: #ff9900;
+	background: url(../images/base_button.gif) -90px 0px no-repeat;
+}
+
+a.formButton {
+	display: inline-block;
+	display: -moz-inline-stack;
+	*display: inline;
+	zoom: 1;
+}
+
+a.formButton:hover {
+	color: #000000;
+	background: url(../images/base_button.gif) -90px 0px no-repeat;
+}
+
+textarea.editor {
+	width: 100%;
+}
+
+/* ---------- Icon ---------- */
+
+.trueIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/base_icon.gif) no-repeat 0px 0px;
+}
+
+.falseIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/base_icon.gif) no-repeat 0px -60px;
+}
+
+.addIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	background: url(../images/base_icon.gif) no-repeat 0px -120px;
+}
+
+.removeIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	background: url(../images/base_icon.gif) no-repeat 0px -180px;
+}
+
+.upIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	background: url(../images/base_icon.gif) no-repeat 0px -240px;
+}
+
+.downIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	background: url(../images/base_icon.gif) no-repeat 0px -300px;
+}
+
+.deleteIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	background: url(../images/base_icon.gif) no-repeat 0px -360px;
+}
+
+.warnIcon {
+	width: 16px;
+	height: 29px;
+	line-height: 29px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/base_icon.gif) no-repeat 0px -480px;
+}
+
+.loadingIcon {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/base_loading_icon.gif) center no-repeat;
+}
+
+/* ---------- Other ---------- */
+.warnInfo {
+	line-height: 30px;
+	padding: 5px 5px 5px 20px;
+	border: 1px solid #ffca80;
+	background: url(../images/base_icon.gif) no-repeat 0px -420px #fffee2;
+}
+
+.loadingBar {
+	width: 208px;
+	height: 20px;
+	line-height: 20px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/base_loading_bar.gif) center no-repeat;
+}
+
+
+/* ---------- Dialog ---------- */
+
+.dialogOverlay {
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 99;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.50;
+	opacity: 0.50;
+	zoom: 1;
+	background: url(../images/base_overlay_bg.png);
+}
+
+* html .dialogOverlay {
+	position: absolute;
+	top: 0;
+}
+
+.baseDialog {
+	padding: 5px;
+	display: none;
+	position: fixed;
+	top: 25%;
+	left: 50%;
+	z-index: 100;
+	overflow: hidden;
+}
+
+* html .baseDialog {
+	position: absolute;
+	top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(25 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+.baseDialog .dialogWrap {
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	filter: alpha(opacity = 15);
+	-moz-opacity: 0.15;
+	opacity: 0.15;
+	background-color: #000000;
+}
+
+.baseDialog .dialogMain {
+	border: 1px solid #779cb0;
+	background: url(../images/base_x_bg.gif) 0px -120px #ffffff repeat-x;
+}
+
+.baseDialog .dialogTitle {
+	height: 40px;
+	line-height: 40px;
+	clear: both;
+	padding-left: 10px;
+	color: #666666;
+	font-weight: bold;
+	cursor: move;
+	background: url(../images/base_x_bg.gif) 0px 0px repeat-x;
+}
+
+.baseDialog .dialogClose {
+	width: 25px;
+	height: 19px;
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	cursor: pointer;
+	background: url(../images/base_button.gif) -180px 0px no-repeat;
+}
+
+.baseDialog .dialogClose:hover {
+	background-position: -240px 0px;
+}
+
+.baseDialog .dialogContent {
+	line-height: 30px;
+	clear: both;
+	margin: 40px 50px;
+}
+
+.baseDialog .dialogwarnIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -540px no-repeat;
+}
+
+.baseDialog .dialogsuccessIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -740px no-repeat;
+}
+
+.baseDialog .dialogerrorIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -940px no-repeat;
+}
+
+.baseDialog .dialogButtonArea {
+	height: 34px;
+	padding-top: 6px;
+	clear: both;
+	text-align: center;
+	background: url(../images/base_x_bg.gif) 0px -60px repeat-x;
+}
+
+.baseDialog .dialogButtonArea input {
+	margin: 0px 10px;
+}
+
+.baseDialog .dialogButtonArea .formButton {
+	width: 70px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+	color: #000000;
+	font-size: 12px;
+	border: none;
+	background: url(../images/base_button.gif) 0px 0px no-repeat;
+}
+
+.baseDialog .dialogButtonArea .formButton:hover {
+	color: #ff9900;
+	background: url(../images/base_button.gif) -90px 0px no-repeat;
+}
+
+.baseDialog .dialogIframe {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	filter: Alpha(Opacity = 0);
+}
+
+/* ---------- Message ---------- */
+
+.baseMessage {
+	padding: 5px 15px 5px 10px;
+	display: none;
+	position: fixed;
+	top: 35%;
+	left: 50%;
+	z-index: 1000;
+	color: #000000;
+	border: 2px solid #ffaa71;
+	background-color: #fff5ee;
+}
+
+* html .baseMessage {
+	position: absolute;
+	top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(35 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+
+.baseMessage .messagewarnIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -540px no-repeat;
+}
+
+.baseMessage .messagesuccessIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -740px no-repeat;
+}
+
+.baseMessage .messageerrorIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -940px no-repeat;
+}
+
+.baseMessage .messageContent {
+	line-height: 30px;
+}
+
+.baseMessage .messageIframe {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	filter: Alpha(Opacity = 0);
+}
+
+/* ---------- Validate ---------- */
+
+.validateErrorContainer {
+	line-height: 20px;
+	display: none;
+	clear: both;
+	padding: 5px 8px;
+	margin: 5px 0px;
+	border: 1px solid #febe8f;
+	background-color: #fff8d9;
+}
+
+.validateErrorContainer .validateErrorTitle {
+	height: 30px;
+	line-height: 30px;
+	clear: both;
+	font-weight: bold;
+	padding-left: 35px;
+	background: url(../images/base_icon.gif) 0px -540px no-repeat;
+}
+
+.validateErrorContainer li {
+	padding-left: 35px;
+}
+
+
+input.validateError {
+	background-color: #fff8ef;
+	border: dotted 1px #ff9b10;
+}
+
+select.validateError {
+	background-color: #fff8ef;
+	border: dotted 1px #ff9b10;
+}
+
+/* ---------- ErrorPage ---------- */
+
+.errorPage .errorBox {
+	height: 87px;
+	line-height: 30px;
+	width: 347px;
+	padding: 80px 38px 33px 115px;
+	margin: 100px auto;
+	background: url(../images/error_page_bg.gif) no-repeat 0px 0px;
+}
+
+.errorPage .errorMessage {
+	line-height: 50px;
+	color: #fb6600;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.errorPage .errorUrl {
+	color: #333333;
+}
+
+.errorPage .errorUrl a {
+	color: #fb6600;
+}
+
+
+input, select, label {
+	vertical-align: middle
+}
+
+.hideform{ display:none;}
+.showform{ display:block;}
