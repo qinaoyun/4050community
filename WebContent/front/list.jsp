@@ -5,38 +5,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet">
         <link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
-        <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+        <link href="<%=request.getContextPath()%>/css/list.css" rel="stylesheet">
         <script src="<%=request.getContextPath()%>/js/jquery-1.8.3.js"></script>
-        <style>
-            .thumbnail:hover, .media:hover{
-                box-shadow:5px 5px 5px #9e9c9c;
-                transform:translateX(3px);
-                transform:translateY(3px);
-            }
-            .comment{
-                width:70px;
-                height:70px;
-                line-height:70px;
-                border-radius:35px;
-                color:#fff;
-                background:#01FF70;
-                position:fixed;
-                top:100px;
-                left:70%;
-                text-align:center;
-                z-index:10;
-            }
-            .comment:hover{
-               
-                transform:rotateZ(360deg);
-                -webkit-transform:rotateZ(360deg);
-                cursor:pointer;
-               
-                
-               
-            }
-        </style>
+        <script src="<%=request.getContextPath()%>/js/list.js"></script>
+        <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+        
 </head>
   <body>
     <nav class="navbar-inverse">
@@ -184,30 +159,56 @@
             <li class="active">Data</li>
         </ol>
     </div>
-    <div style="background-color:#eee;width:100%;">
-        <div class="container">
-            <h3 style="background-color:#5bc0de;border-radius:3px;border:1px solid #5bc0de ;width:100%;height:40px;line-height:40px;text-align:center;color:#fff;">${firstDirectory}</h3>
-                <c:forEach items="${read}" var="x" >
-                <div class="media" style="background-color:white;border:1px solid white;border-radius:8px;margin-bottom:15px;">
-                <a href="<%=request.getContextPath()%>/showdetail.do?ID=${x.ID}" style="text-decoration:none;">
-                    <div class="media-left" style="padding:5px">
-                        
-                            <div style="max-width:100px;max-height:100px;overflow:hidden;padding:10px;">
-                                <img class="media-object" src="{$c.savepath}{$c.savename}" alt="...">
-                            </div>
-                    
-                    </div>                    
-                    <div class="media-body">
-                        <h4 class="media-heading text-center" style="margin-top:5px;margin-right:10px;">${x.title}</h4>
-                        <p style="padding-right:10px;">${x.content}</p>
-                    </div>
-                    </a>
-                </div>
-                 </c:forEach>
-                
+    <div class="main-body-wrapper">
+        <!--中间左侧编辑模块-->
+        <div class="main-body-left">
+        <p class="main-body-left-title">就业</p>
+            <ul>
+                <li class="active"><a>全职</a></li>
+                <li><a>兼职</a></li>
+            </ul>
         </div>
+        <div class="main-body-left-zw"></div>
+        <!--中间左侧编辑模块-->
+         <!--中间中间编辑模块-->
+        <div class="main-body-middle">
+        	 <c:forEach items="${read}" var="x" >
+	            <div class="middle-detail">
+	                <ul>
+	                    <li class="overh">
+	                        <a href="<%=request.getContextPath()%>/showdetail.do?ID=${x.ID}">
+	                           <div class="middle-detail-img">
+	                               <img src="{$c.savepath} {$c.savename}" />
+	                           </div>
+	                           <div class="middle-detail-content">
+	                               <p class="middle-detail-content-title">${x.title}</p>
+	                               <p class="summary">${x.content}</p>
+	                               <span><a href="###">亲奥运</a></span>
+	                               <span class="time">2016-09-12</span>
+	                           </div>
+	                        </a>
+	                    </li>
+	                    
+	                </ul>
+	            </div>
+            </c:forEach>
+        </div>
+         <!--中间中间编辑模块-->
+        <!--中间右侧编辑模块-->
+        <div class="main-body-right"></div>
+        <!--中间右侧编辑模块-->
     </div>
-    <div class="comment">我要发帖</div>
+    
+<!--右侧编辑模块-->
+    <div class="fixedMenu">
+        <a class="backToTop" href="javascript:scroll(0,0)" title="返回顶部">
+            <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+        </a>
+        <a class="writeNews" title="我要发帖">
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        </a>
+    </div>
+<!--右侧编辑模块-->
     <div>
         <footer  style="background-color:black; color:white;padding:5px;">
         <div class="container text-center" >

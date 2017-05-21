@@ -59,3 +59,8 @@ summary, time, mark, audio, video {
     padding: 0;
 }
 mark { background: #ff0; }
+
+/** 自定义 **/
+.fl{float:left;}
+.fr{float:right;}
+.overh{overflow: hidden;}

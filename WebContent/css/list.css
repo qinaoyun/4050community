@@ -1,9 +1,6 @@
-@media screen and (max-width: 1365px) {}
 .main-body-wrapper{padding:20px 50px;min-height:600px;background:#f4f5f5;overflow:hidden;}
 .main-body-middle{width:60%;margin:0 2%;float:left;min-height:100px;}
 .main-body-middle .middle-detail{background: #fff;margin-bottom:20px;box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);}
-.main-body-middle .middle-detail p.title{padding:10px;border-bottom:1px solid #eee;}
-.main-body-middle .middle-detail p span{float:right;color:#007fff;}
 .main-body-middle .middle-detail .middle-detail-img{display:inline-block;vertical-align: bottom;width:60px;height:60px;}
 .main-body-middle .middle-detail .middle-detail-content{display:inline-block;margin-left:20px;width:calc(100% - 90px);}
 .main-body-middle .middle-detail .middle-detail-content .summary{color:#aaa;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width:100%;}
@@ -11,11 +8,13 @@
 .main-body-middle .middle-detail .middle-detail-content p.middle-detail-content-title{font-weight:bold;font-size:18px;color:#333;margin:0;}
 .main-body-middle .middle-detail img{max-width:60px;max-height:60px;}
 .main-body-middle .middle-detail li{padding:10px;}
-.main-body-left{width:10%;position:fixed;z-index:2;background-color: #fff;}
+.main-body-left{width:10%;position:fixed;z-index:2;}
+.main-body-left ul{background-color: #fff;}
+.main-body-left .main-body-left-title{color:rgba(3, 113, 223, 0.7);line-height:30px;text-align:center;font-size:18px;border-bottom:1px solid rgba(3, 113, 223, 0.7);}
 .main-body-left li{height:30px;line-height:30px;text-align:center;color:#007fff;cursor:pointer;}
-.main-body-left li a.active{background:rgba(3, 113, 223, 0.7);}
-.main-body-left li a{color:#007fff;display:block;}
-.main-body-left li a.active{color:#fff;}
+.main-body-left li a{display:block;color:#007fff;}
+.main-body-left li.active a{background:rgba(3, 113, 223, 0.5);}
+.main-body-left li.active a{color:#fff;}
 .main-body-left-zw{float:left;width:10%;min-height:100px;}
 .main-body-right{width:26%;float:left;min-height:100px;}
 .fixedMenu{
@@ -38,4 +37,3 @@ margin:4px 0;
 .fixedMenu .writeNews{
 background:rgba(248,89,89,.8);
 }
-
