@@ -1,40 +1,55 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     <head>
-        <meta charset="utf-8">
+           <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
-        <script src="jquery.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <style>
-            .thumbnail:hover, .media:hover{
-                box-shadow:5px 5px 5px #9e9c9c;
-                transform:translateX(3px);
-                transform:translateY(3px);
-            }
-            .comment{
-                width:70px;
-                height:70px;
-                line-height:70px;
-                border-radius:35px;
-                color:#fff;
-                background:#01FF70;
-                position:fixed;
-                top:100px;
-                right:10px;
-                text-align:center;
-                z-index:10;
-            }
-            .comment:hover{
-               
-                transform:rotateZ(180deg);
-                -webkit-transform:rotateZ(180deg);
-                cursor:pointer;
-               
-                
-               
-            }
+        <link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
+        <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+        <script src="<%=request.getContextPath()%>/js/jquery-1.8.3.js"></script>
+     <style>
+            *{margin:0;padding:0;}
+            ul{list-style:none;}
+            .person-header{margin-top:20px;}
+            .person-header-img{width:100%;height:160px;overflow:hidden;}
+            .person-header-name{height:80px;position:relative;background:#fff;}
+            .person-header-logo{position:absolute;width:100px;height:100px;top:-50px;left:20px;border-radius:50px;overflow:hidden;}
+            .person-header-name .name{margin-left:120px;margin-top:0;}
+            .person-header-img img{max-width:100%;}
+            .person-header-name .follow{margin-right:20px;margin-top:-15px;display:block;text-align:center;float:right;width:150px;line-height:40px;height:40px;border-radius:5px;color: #777;border: 1px solid #ddd;}
+            .person-body{margin-top:20px;margin-bottom:20px;}
+            .person-body .person-body-left{float:left;width:68%;background:#fff;margin-right:2%;min-height:500px;}
+            .person-body .person-body-right{float:left;width:30%;background:#fff;overflow:hidden;}
+            .person-body .person-body-left ul{height:38px;line-height:38px;border-bottom: 2px solid #E8E8E8;font-size:14px;}
+            .person-body .person-body-left ul li{cursor:pointer;text-align:center;float:left;margin:0 10px;position:relative;padding:0 10px;}
+            .person-body .person-body-left ul li.active:after{position:absolute;content:'';border:1px solid #E72418;display:block;width:100%;bottom:0px;left:0;}
+            .person-body .person-body-left ul li.active{color:#E72418;}
+            .person-body .person-body-left ul li:first-child{margin-left:40px;}
+            .person-body .person-body-right>div{float:left;width:50%;text-align:center;}
+            .person-body-right{padding-bottom:10px;}
+            .article-detail{height:80px;overflow:hidden;margin:0 20px;border-bottom: 1px solid #ddd;}
+            .article-detail h4{margin:5px 0;}
+            .article-detail .article-detail-img{float:left;height:70px;width:70px;border-radius:35px;overflow:hidden;}
+            .article-detail .article-detail-img img{width:100%;}
+            .article-detail-info-tilte span{color:#aaa;font-size:14px;margin-left:20px;}
+            .article-detail .article-detail-info{float:left;height:70px;padding-left:20px;}
+            .article-detail .article-detail-info-desc{height:20px;}
+            .article-detail .article-detail-info .date{color:#aaa;font-size:14px;}
+            .follow-detail{height:50px;overflow:hidden;margin:0 20px;border-bottom: 1px solid #ddd;position:relative;}
+            .follow-detail h4{margin:5px 0;line-height:40px;}
+            .follow-detail .follow-detail-img{float:left;height:40px;width:40px;border-radius:20px;overflow:hidden;margin-top:5px;}
+            .follow-detail .follow-detail-img img{width:100%;}
+            .follow-detail-info-tilte span{color:#aaa;font-size:14px;margin-left:20px;}
+            .follow-detail .follow-detail-info{float:left;height:50px;padding-left:20px;position:relative;}
+            .follow-detail span{display:block;position:absolute;width:80px;height:30px;border-radius:5px;top:10px;right:40px;background:#2A90D7;text-align:center;color:#fff;line-height:30px;}
+            .fans-detail{height:50px;overflow:hidden;margin:0 20px;border-bottom: 1px solid #ddd;position:relative;}
+            .fans-detail h4{margin:5px 0;line-height:40px;}
+            .fans-detail .fans-detail-img{float:left;height:40px;width:40px;border-radius:20px;overflow:hidden;margin-top:5px;}
+            .fans-detail .fans-detail-img img{width:100%;}
+            .fans-detail-info-tilte span{color:#aaa;font-size:14px;margin-left:20px;}
+            .fans-detail .fans-detail-info{float:left;height:50px;padding-left:20px;position:relative;}
+            .fans-detail span{display:block;position:absolute;width:80px;height:30px;border-radius:5px;top:10px;right:40px;background:#2A90D7;text-align:center;color:#fff;line-height:30px;}
         </style>
 </head>
 <body>
@@ -176,37 +191,83 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    <div class="container">
-        <ol class="breadcrumb" style="margin-bottom:0;background:#fff;">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li class="active">Data</li>
-        </ol>
-    </div>
     <div style="background-color:#eee;width:100%;">
         <div class="container">
-            <h3 style="background-color:#5bc0de;border-radius:3px;border:1px solid #5bc0de ;width:100%;height:40px;line-height:40px;text-align:center;color:#fff;">${firstDirectory}</h3>
-                <c:forEach items="${read}" var="x" >
-                <div class="media" style="background-color:white;border:1px solid white;border-radius:8px;margin-bottom:15px;">
-                <a href="{:U('Home/Hotnews/detailhotnewsshow',array('id' => $c['id']))}" style="text-decoration:none;">
-                    <div class="media-left" style="padding:5px">
-                        
-                            <div style="max-width:100px;max-height:100px;overflow:hidden;padding:10px;">
-                                <img class="media-object" src="{$c.savepath}{$c.savename}" alt="...">
-                            </div>
-                    
-                    </div>                    
-                    <div class="media-body">
-                        <h4 class="media-heading text-center" style="margin-top:5px;margin-right:10px;">${x.title}</h4>
-                        <p style="padding-right:10px;">${x.content}</p>
-                    </div>
-                    </a>
+        <div class="person-header">
+            <div class="person-header-img">
+                <img src="images/person-bg.png"/>
+            </div>
+            <div class="person-header-name">
+               <h3 class="name">yanyisong</h3>
+               <div class="person-header-logo">
+                   <img src="images/userImg.jpg"/>
                 </div>
-                 </c:forEach>
-                
+                <span class="follow">已关注</span> 
+            </div>
+        </div>
+        <div class="person-body">
+            <div class="person-body-left">
+                <ul class="person-body-left-tab">
+                    <li attr="article" class="active">文章</li>
+                    <li attr="follow-list">关注</li>
+                    <li attr="fans-list">粉丝</li>
+                </ul>
+                <div class="person-body-left-content">
+                    <div class="article person-body-left-content-show">
+                        <div class="article-detail">
+                            <div class="article-detail-img">
+                                <img src="public/images/userImg.jpg"/>
+                            </div>
+                            <div class="article-detail-info">
+                                <h4 class="article-detail-info-tilte">大家好<span>属于体育栏目</span></h4>
+                                <div class="article-detail-info-desc">大家好大家好大家好大家好大家好大家好大家好大家好大家好</div>
+                                <div class="date">2017-12-22</div>
+                            </div>
+                            
+                        </div>
+                    </div>  
+                    <div style="display:none;" class="follow-list person-body-left-content-show">
+                        <div class="follow-detail">
+                            <div class="follow-detail-img">
+                                <img src="public/images/userImg.jpg"/>
+                            </div>
+                            <div class="follow-detail-info">
+                                <h4 class="article-detail-info-tilte">大家好</h4>
+                                
+                            </div>
+                            <span>关注</span>
+                            
+                        </div>
+                    </div> 
+                    <div style="display:none;" class="fans-list person-body-left-content-show">
+                        <div class="fans-detail">
+                            <div class="fans-detail-img">
+                                <img src="public/images/userImg.jpg"/>
+                            </div>
+                            <div class="fans-detail-info">
+                                <h4 class="fans-detail-info-tilte">大家好</h4>
+                                
+                            </div>
+                            <span>关注</span>
+                            
+                        </div>
+                    </div>     
+                </div>
+            </div>
+            <div class="person-body-right">
+                <div class="person-body-right-follow">
+                    <h3>39</h3>
+                    <span>关注</span>
+                </div>
+                <div class="person-body-right-fans">
+                    <h3>39</h3>
+                    <span>粉丝</span>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
         </div>
     </div>
-    <div class="comment">我要发帖</div>
+    </div>
     <div>
         <footer  style="background-color:black; color:white;padding:5px;">
         <div class="container text-center" >
@@ -217,5 +278,16 @@
         </div>
         </footer>
     </div>
+    <script>
+    $(function(){
+        $(".person-body-left-tab li").click(function(){
+            $(".person-body-left-tab li").removeClass("active");
+            $(this).addClass("active");
+            var _attr=$(this).attr("attr");
+            $(".person-body-left-content-show").hide();
+            $(".person-body-left-content").find('.'+_attr).show();
+        });
+    })
+    </script>
 </body>
 </html>
