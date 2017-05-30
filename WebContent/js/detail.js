@@ -58,20 +58,20 @@ $(function(){
             var replyNews=$(this).parents('.user-action').find("textarea").val();
             var replyNewsName="xxx";
             var dom=$("<a class='userImg'><img src='public/images/userImg.jpg' /></a><div class='content'><div class='user-info'><a href=''>haha</a>回复<a>"+replyNewsName +"</a></div><p>"+replyNews+"</p><div class='user-action'><a class='replyAction'>回复</a></div></div>");
-            var grandParent=$(this).parent().parent();
+            var replyDom=$(this).parents('.li-item-comment').find('.reply'); 
             //根据父父父元素class判断是否为reply,若是，在该元素后面追加元素
-            if(grandParent.parent().attr('class')=='reply')
-                { 
-                grandParent.after(dom);
+            ////if(grandParent.parent().attr('class')=='reply')
+                ////{ 
+                ////grandParent.after(dom);
                 //$(".replyAction").parents(".comment-list").on('click',$(".replyAction"), funReply);
                 //$(this).on('click',funSubmit);
-                }
+                ////}
             //这种情况应该是li,在li子元素最前面追加元素
-            else{       
-                grandParent.find('.reply').prepend(dom);
+            ////else{       
+                replyDom.prepend(dom);
                 //$(".replyAction").on('click', funReply);
                 //$(this).on('click',funSubmit);
-            }
+            ////}
             $(".comment-list textarea").remove();
             $(".comment-list .comment-submit").remove();
             }
