@@ -35,6 +35,11 @@ public class BaseController{
 		  return "../admin/Login";		  
 	  }
 	
+	@RequestMapping("/test.do")
+	  public String readtesttest(HttpServletRequest req,ModelMap model) {
+		  return "../admin/Login";		  
+	  }
+	
 	@RequestMapping("/saveComment.do")
 	@ResponseBody
 	  public String readtest(HttpServletRequest request,ModelMap model) {
