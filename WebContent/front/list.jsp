@@ -39,7 +39,7 @@
 	                    <li class="overh">
 	                        <a href="<%=request.getContextPath()%>/showdetail.do?ID=${x.ID}">
 	                           <div class="middle-detail-img">
-	                               <img src="{$c.savepath} {$c.savename}" />
+	                               <img src="${x.filepath}" />
 	                           </div>
 	                           <div class="middle-detail-content">
 	                               <p class="middle-detail-content-title">${x.title}</p>
