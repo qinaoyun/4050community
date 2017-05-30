@@ -5,10 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet">
-	<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="<%=request.getContextPath()%>/css/index.css" rel="stylesheet">       
 	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
   <body data-spy="scroll" data-target=".navbar-example">
     <%@ include file="header.jsp"%>
@@ -209,18 +209,6 @@
     </div>
 <!--右侧编辑模块-->
 <!-- 底部模块-->
-    <div>
-        <footer  style="background-color:black; color:white;padding:5px;">
-        <div class="container text-center" >
-        <div>
-        4050社区
-        
-        </div>
-        </div>
-        </footer>
-    </div>
+    <%@ include file="footer.jsp"%>
 <!-- 底部模块-->
 </body>
-<script>
-$('body').scrollspy({ target: '.navbar-example' });
-</script>
