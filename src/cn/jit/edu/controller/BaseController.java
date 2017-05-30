@@ -34,6 +34,43 @@ public class BaseController{
 	  public String read(HttpServletRequest req,ModelMap model) {
 		  return "../admin/Login";		  
 	  }
+	
+	@RequestMapping("/saveComment.do")
+	@ResponseBody
+	  public String readtest(HttpServletRequest request,ModelMap model) {
+		 String articleId = request.getParameter("articleId");
+		   String articleComment = request.getParameter("articleComment");
+		   Comment comment = new Comment();
+		   comment.setArticleId(Integer.parseInt(articleId));
+		   comment.setTime(new Date());
+		   comment.setCommentedId(0);
+		   comment.setCommenterId(0);
+		   comment.setComment(articleComment);
+			entityDao.save(comment);
+			List<Object>  list=entityDao.createQuery("select max(id) from comment");	
+			Integer commentId = (Integer)list.get(0);
+			return commentId.toString();
+//		  return "../admin/Login";		  
+	  }
+	
+	@RequestMapping("/saveReplay.do")
+	@ResponseBody
+	  public String readReplay(HttpServletRequest request,ModelMap model) {
+		User user = (User)request.getSession().getAttribute("frontnumber");
+		   String rcontent = request.getParameter("rcontent");
+		   String commentId = request.getParameter("commentId");
+		   Replay replay = new Replay();
+		   replay.setCommentedId(0);
+		   replay.setCommenterId(0);
+		   replay.setRcontent(rcontent);
+		   replay.setRdate(new Date());
+		   replay.setCommentId(Integer.parseInt(commentId));
+			entityDao.save(replay);
+			List<Object>  list=entityDao.createQuery("select max(id) from replay");	
+			Integer replayId = (Integer)list.get(0);
+			return  replayId.toString();
+	  }
+	
 	  @RequestMapping(value="/login.do",method = RequestMethod.POST)
 	  public String testLogin(@RequestParam(value="username")String username, String password, HttpServletRequest request,ModelMap model) throws NoSuchAlgorithmException{
 		 //md5加密
@@ -63,6 +100,7 @@ public class BaseController{
 		  }
 	        return "error";
 	    }
+	  
 	  
 	  @RequestMapping("/newsadd.do")
 	  public String add(@RequestParam(value = "pic", required = false) MultipartFile file, HttpServletRequest request,Article article) {
@@ -172,6 +210,10 @@ public class BaseController{
 		  List<Object>  list=entityDao.createQuery("from article where ID = '"+ID+"'");	 
 		  Article article = (Article)list.get(0);
 		 model.addAttribute("article", article);	
+			List<Object> msg = entityDao.createQuery("from comment  where articleId='" + ID + "'");
+			model.addAttribute("msg", msg);
+			List<Object>  rpy=entityDao.createQuery("from replay");
+			model.addAttribute("rpy", rpy);
 		  return "../front/detail";		  
 	  }
 	  
@@ -196,20 +238,7 @@ public class BaseController{
 //					return sclass;
 //			}
 			
-			@RequestMapping(value = "/saveComment .do", method = RequestMethod.POST)
-			public String saveComment(ModelMap model,HttpServletRequest request) {
-				User user = (User)request.getSession().getAttribute("frontnumber");
-			   String articleId = request.getParameter("articleId");
-			   String articleComment = request.getParameter("comment");
-			   Comment comment = new Comment();
-			   comment.setArticleId(Integer.parseInt(articleId));
-			   comment.setTime(new Date());
-			   comment.setCommentedId(0);
-			   comment.setCommenterId(0);
-			   comment.setComment(articleComment);			   
-				entityDao.save(comment);
-				return "front/loading1";
-			}
+		
 			
 			@RequestMapping(value = "/saveReplay .do", method = RequestMethod.POST)
 			public String saveReplay(ModelMap model,HttpServletRequest request) {

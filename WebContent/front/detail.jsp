@@ -42,16 +42,29 @@
 	              <div class="content">
 	           		 ${article.content}
 	              </div>
+	               <input type = "hidden" Id = "articleId" value="${article.ID}">
 			</div>
 			<div class="commentForm">
 	            <div class="userImg">
 	                <img src="public/images/userImg.jpg"></img>
 	            </div>
 	            <div class="input-wrap">
-	                <textarea class="comment_textarea" style="" name="inputText" placeholder="写下您的评论..."></textarea>
+	                <textarea id= "articleComment"class="comment_textarea" style="" name="inputText" placeholder="写下您的评论..."></textarea>
 	            </div>
-            	<div class="submit"><span>评论</span></div>
+            	<div class="submit"><button id= "saveComment">评论</button></div>
             	<div style="clear:both;"></div>
+            	 <!-- 异步提交评论 --> 
+            <script>
+            $("#saveComment").click(function(){
+        		$.post("<%=request.getContextPath()%>/saveComment.do",{
+        			articleComment : $("#articleComment").val(),
+        			articleId : $("#articleId").val()			
+        		},
+        		function(data,status){
+        			var result = data; 
+        		},"json");
+        	});
+            </script>
         	</div>
         	<ul class="comment-list">
             <li class="item li-item-comment">
