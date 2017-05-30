@@ -64,3 +64,5 @@ mark { background: #ff0; }
 .fl{float:left;}
 .fr{float:right;}
 .overh{overflow: hidden;}
+.fixedMenu .glyphicon{line-height:40px;}
+.fixedMenu a{cursor:pointer;}

@@ -11,6 +11,7 @@
 .main-body-middle .middle-detail .middle-detail-content p.middle-detail-content-title{font-weight:bold;font-size:18px;color:#333;margin:0;}
 .main-body-middle .middle-detail img{max-width:60px;max-height:60px;}
 .main-body-middle .middle-detail li{padding:10px;}
+.main-body-left ul{margin-top:10px;}
 .main-body-left{width:10%;position:fixed;z-index:2;background-color: #fff;}
 .main-body-left li{height:30px;line-height:30px;text-align:center;color:#007fff;cursor:pointer;}
 .main-body-left li a.active{background:rgba(3, 113, 223, 0.7);}
